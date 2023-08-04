@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import home from '../components/home.vue'
 import market from '../components/market.vue'
-import buy from '../components/buy.vue'
-import sell from '../components/sell.vue'
+import why from '../components/Why.vue'
+import News from '../components/News.vue'
 import about from '../components/about.vue'
 import wallet from '../components/wallet.vue'
+import Crypto from '../components/cryptoPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,14 +21,14 @@ const router = createRouter({
       component: market
     },
     {
-      path: '/Buy',
-      name: 'buy',
-      component: buy
+      path: '/Why',
+      name: 'Why',
+      component: why
     },
     {
-      path: '/Sell',
-      name: 'sell',
-      component: sell
+      path: '/News',
+      name: 'News',
+      component: News
     },
     {
       path: '/AboutUs',
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/Wallet',
       name: 'wallet',
       component: wallet
+    },
+    {
+      path: '/Crypto/:cryptoName/:cryptoSymbol',
+      name: 'Crypto',
+      component: Crypto
     }
   ]
 })

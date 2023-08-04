@@ -28,9 +28,9 @@
             class="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-purple-600 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"
           ></span>
           <router-link
-            to="/Buy"
+            to="/News"
             class="relative text-white transition duration-300 group-hover:text-white ease"
-            >Buy Crypto</router-link
+            >News</router-link
           >
         </li>
         <li
@@ -40,9 +40,9 @@
             class="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-purple-600 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"
           ></span>
           <router-link
-            to="/Sell"
+            to="/Why"
             class="relative text-white transition duration-300 group-hover:text-white ease"
-            >Sell Crypto</router-link
+            >Why Choose Us</router-link
           >
         </li>
         <li
@@ -58,11 +58,11 @@
           >
         </li>
       </ul>
-      <div class="flex gap-4">
-        <router-link to="/Wallet">
+      <div class="max-lg:block hidden">
+        <!-- <router-link to="/Wallet">
           <i class="fa-solid fa-wallet text-2xl text-white"></i>
-        </router-link>
-        <button @click="openMenu()" class="max-lg:block hidden">
+        </router-link> -->
+        <button @click="openMenu()" class="">
           <i class="fa-solid fa-bars text-2xl text-white"></i>
         </button>
       </div>
@@ -90,22 +90,22 @@
         </li>
         <li class="my-4 transition duration-500 hover:scale-125 hover:bg-purple-900 p-4 text-3xl">
           <button>
-            <router-link to="/Buy" @click="closeMenu()">
-              <span>Buy Crypto</span>
+            <router-link to="/News" @click="closeMenu()">
+              <span>News</span>
             </router-link>
           </button>
         </li>
-        <li class="my-4 transition duration-500 hover:scale-125 hover:bg-purple-900 p-4 text-3xl">
-          <button>
-            <router-link to="/Sell" @click="closeMenu()">
-              <span>Sell Crypto</span>
-            </router-link>
-          </button>
-        </li>
-        <li class="my-4 transition duration-500 hover:scale-125 hover:bg-purple-900 p-4 text-3xl">
+        <!-- <li class="my-4 transition duration-500 hover:scale-125 hover:bg-purple-900 p-4 text-3xl">
           <button>
             <router-link to="/Wallet" @click="closeMenu()">
               <span>Wallet</span>
+            </router-link>
+          </button>
+        </li> -->
+        <li class="my-4 transition duration-500 hover:scale-125 hover:bg-purple-900 p-4 text-3xl">
+          <button>
+            <router-link to="/Why" @click="closeMenu()">
+              <span>Why Choose Us</span>
             </router-link>
           </button>
         </li>
@@ -137,11 +137,10 @@ export default {
 
     const updateNavbarOnScroll = () => {
       const navbar = document.querySelector('nav')
-      if (!navbar) return // Check if the 'nav' element exists before proceeding
+      if (!navbar) return
 
-      const scrollThreshold = 100 // Adjust this threshold value as needed
+      const scrollThreshold = 100
 
-      // Check if the user has scrolled beyond the threshold
       if (window.scrollY > scrollThreshold) {
         navbar.classList.add('fixed', 'top-0', 'w-full', 'z-50', 'bg-color', 'shadow-xl')
       } else {
@@ -155,7 +154,6 @@ export default {
       openMenu,
       closeMenu,
       mounted() {
-        // Call the updateNavbarOnScroll function after the component is mounted
         this.updateNavbarOnScroll()
       }
     }
@@ -163,8 +161,7 @@ export default {
 }
 </script>
 
-<style>
-/* Animation classes for sliding in/out the mobile menu */
+<style scoped>
 @keyframes slide-in {
   from {
     right: -100%;
