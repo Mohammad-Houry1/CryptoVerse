@@ -42,7 +42,6 @@
           </div>
         </div>
       </div>
-      <h1 class="text-5xl text-white font-bold">Latest Tweets:</h1>
     </div>
   </div>
 </template>
